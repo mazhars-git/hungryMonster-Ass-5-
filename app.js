@@ -1,4 +1,5 @@
-document.getElementById('search').addEventListener('click', function(){
+//even on search button--------------------------------------------------
+document.getElementById('search').addEventListener('click', function () {
     const searchInput = document.getElementById('typeInput').value;
     displayInputDish(searchInput);
 
@@ -6,14 +7,15 @@ document.getElementById('search').addEventListener('click', function(){
     document.getElementById('typeInput').value = "";
 })
 
-function displayInputDish(input){
+//function to display input dish --------------------------------------
+function displayInputDish(input) {
     fetch(`https://www.themealdb.com/api/json/v1/1/search.php?f=${input}`)
     fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=${input}`)
-    .then(res => res.json())
-    .then(data => displayMeals(data.meals));
+        .then(res => res.json())
+        .then(data => displayDishes(data.meals));
 }
-
-const displayMeals = mealNames =>{
+//display meals name ---------------------------------------------------
+const displayDishes = mealNames => {
     const mealsDiv = document.getElementById('meals');
     mealNames.forEach(mealName => {
         const mealDiv = document.createElement('div');
@@ -29,15 +31,17 @@ const displayMeals = mealNames =>{
     });
 }
 
-const displayDishDetails = meal =>{
-    const url = `https://www.themealdb.com/api/json/v1/1/search.php?s=${meal}`
+//display dish details ----------------------------------------------
+const displayDishDetails = mealName => {
+    const url = `https://www.themealdb.com/api/json/v1/1/search.php?s=${mealName}`
     fetch(url)
-    .then(res => res.json())
-    .then(data => displayDishInfo(data.meals[0]))
+        .then(res => res.json())
+        .then(data => displayDishInfo(data.meals[0]))
 }
 
-const displayDishInfo = mealName =>{
-    
+//display Dish information -------------------------------------------
+const displayDishInfo = mealName => {
+
     const mealDiv = document.getElementById('mealDetails');
     mealDiv.innerHTML = `
         <img src="${mealName.strMealThumb}">
@@ -57,4 +61,5 @@ const displayDishInfo = mealName =>{
         </ul>
     `;
 }
+//----------------------------------end --------------------------
 

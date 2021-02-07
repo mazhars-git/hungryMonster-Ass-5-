@@ -1,21 +1,28 @@
-section{
+section {
     background-color: #fa9959;
     min-height: 650px;
 }
-.container{
+
+/**-----------------------------container ----------------------------*/
+.container {
     padding: 80px 0px;
 }
-.search-area{
+
+/**-----------------------------search section ----------------------------*/
+.search-area {
     width: 40%;
     margin: auto;
     padding-bottom: 40px;
 }
-.search-area input{
+
+.search-area input {
     padding: 10px 100px;
     border-radius: 3px;
     border: none;
 }
-#meals{
+
+/**-----------------------------meals div ----------------------------*/
+#meals {
     display: grid;
     grid-template-columns: repeat(3, 1fr);
     grid-gap: 30px;
@@ -23,16 +30,21 @@ section{
     text-align: center;
     padding-top: 50px;
 }
-.meal{
+
+/**-----------------------------meal div ----------------------------*/
+.meal {
     width: 90%;
     background-color: rgba(248, 245, 245, 0.548);
     border-radius: 10px;
 }
-.meal img{
+
+.meal img {
     width: 100%;
     border-radius: 10px 10px 0 0;
 }
-.meal h3, #mealDetails h3{
+
+.meal h3,
+#mealDetails h3 {
     font-size: 25px;
     font-weight: 700;
     text-transform: capitalize;
@@ -41,25 +53,30 @@ section{
     color: rgb(0, 183, 255);
 }
 
-#mealDetails{
+/**-----------------------------meal Details ----------------------------*/
+#mealDetails {
     background-color: #fff;
-    width: 35%;
+    width: 40%;
     border-radius: 10px;
+    margin: auto;
 }
 
-#mealDetails img{
+#mealDetails img {
     width: 100%;
     border-radius: 10px 10px 0 0;
 }
-#mealDetails h6{
+
+#mealDetails h6 {
     padding: 0 0 5px 30px;
     font-size: 20px;
     font-weight: 500;
 }
-#mealDetails ul{
+
+#mealDetails ul {
     padding-bottom: 20px;
 }
-#mealDetails ul li{
+
+#mealDetails ul li {
     list-style: square;
     margin: 5px 18px;
 }
