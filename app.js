@@ -1,6 +1,13 @@
-fetch('https://www.themealdb.com/api/json/v1/1/search.php?f=b')
-.then(res => res.json())
-.then(data => displayMeals(data.meals));
+document.getElementById('search').addEventListener('click', function(){
+    const searchInput = document.getElementById('typeInput').value;
+    displayInputDish(searchInput);
+})
+
+function displayInputDish(input){
+    fetch(`https://www.themealdb.com/api/json/v1/1/search.php?f=${input}`)
+    .then(res => res.json())
+    .then(data => displayMeals(data.meals));
+}
 
 const displayMeals = mealNames =>{
 
