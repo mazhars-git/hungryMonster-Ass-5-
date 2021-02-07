@@ -34,7 +34,6 @@ const displayDishes = mealsName => {
         `;
         mealDiv.innerHTML = mealInfo;
         mealsDiv.appendChild(mealDiv);
-
     });
 }
 
