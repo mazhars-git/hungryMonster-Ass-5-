@@ -21,10 +21,10 @@ section{
     grid-gap: 30px;
     align-items: center;
     text-align: center;
+    padding-top: 50px;
 }
 .meal{
     width: 90%;
-    color: rgb(8, 24, 255);
     background-color: rgba(248, 245, 245, 0.548);
     border-radius: 10px;
 }
@@ -32,10 +32,34 @@ section{
     width: 100%;
     border-radius: 10px 10px 0 0;
 }
-.meal h3{
+.meal h3, #mealDetails h3{
     font-size: 25px;
-    font-weight: 600;
+    font-weight: 700;
     text-transform: capitalize;
     text-align: center;
     padding: 20px 0;
+    color: rgb(0, 183, 255);
+}
+
+#mealDetails{
+    background-color: #fff;
+    width: 35%;
+    border-radius: 10px;
+}
+
+#mealDetails img{
+    width: 100%;
+    border-radius: 10px 10px 0 0;
+}
+#mealDetails h6{
+    padding: 0 0 5px 30px;
+    font-size: 20px;
+    font-weight: 500;
+}
+#mealDetails ul{
+    padding-bottom: 20px;
+}
+#mealDetails ul li{
+    list-style: square;
+    margin: 5px 18px;
 }
