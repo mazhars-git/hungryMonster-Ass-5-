@@ -1,10 +1,15 @@
 //even on search button--------------------------------------------------
 document.getElementById('search').addEventListener('click', function () {
     const searchInput = document.getElementById('typeInput').value;
-    displayInputDish(searchInput);
 
-    document.getElementById('meals').innerHTML = "";
+    if (searchInput == "") {
+        alert('No meals found')
+    } else {
+        displayInputDish(searchInput);
+    }
     document.getElementById('typeInput').value = "";
+    document.getElementById('meals').innerHTML = "";
+    document.getElementById('mealDetails').innerHTML = "";
 })
 
 //function to display input dish --------------------------------------
@@ -14,6 +19,7 @@ function displayInputDish(input) {
         .then(res => res.json())
         .then(data => displayDishes(data.meals));
 }
+
 //display meals name ---------------------------------------------------
 const displayDishes = mealNames => {
     const mealsDiv = document.getElementById('meals');
@@ -62,4 +68,3 @@ const displayDishInfo = mealName => {
     `;
 }
 //----------------------------------end --------------------------
-
