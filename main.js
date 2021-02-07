@@ -21,9 +21,9 @@ function displayInputDish(input) {
 }
 
 //display meals name ---------------------------------------------------
-const displayDishes = mealNames => {
+const displayDishes = mealsName => {
     const mealsDiv = document.getElementById('meals');
-    mealNames.forEach(mealName => {
+    mealsName.forEach(mealName => {
         const mealDiv = document.createElement('div');
         mealDiv.className = 'meal';
         const mealInfo = `
@@ -34,6 +34,7 @@ const displayDishes = mealNames => {
         `;
         mealDiv.innerHTML = mealInfo;
         mealsDiv.appendChild(mealDiv);
+
     });
 }
 
