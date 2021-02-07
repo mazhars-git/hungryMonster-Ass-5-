@@ -16,8 +16,8 @@ document.getElementById('search').addEventListener('click', function () {
 function displayInputDish(input) {
     fetch(`https://www.themealdb.com/api/json/v1/1/search.php?f=${input}`)
     fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=${input}`)
-        .then(res => res.json())
-        .then(data => displayDishes(data.meals));
+    .then(res => res.json())
+    .then(data => displayDishes(data.meals));
 }
 
 //display meals name ---------------------------------------------------
@@ -27,10 +27,10 @@ const displayDishes = mealsName => {
         const mealDiv = document.createElement('div');
         mealDiv.className = 'meal';
         const mealInfo = `
-        <div onclick="displayDishDetails('${mealName.strMeal}')">
-            <img src="${mealName.strMealThumb}">
-            <h3>${mealName.strMeal}</h3>
-        </div>
+            <div onclick="displayDishDetails('${mealName.strMeal}')">
+                <img src="${mealName.strMealThumb}">
+                <h3>${mealName.strMeal}</h3>
+            </div>
         `;
         mealDiv.innerHTML = mealInfo;
         mealsDiv.appendChild(mealDiv);
@@ -41,13 +41,12 @@ const displayDishes = mealsName => {
 const displayDishDetails = mealName => {
     const url = `https://www.themealdb.com/api/json/v1/1/search.php?s=${mealName}`
     fetch(url)
-        .then(res => res.json())
-        .then(data => displayDishInfo(data.meals[0]))
+    .then(res => res.json())
+    .then(data => displayDishInfo(data.meals[0]))
 }
 
 //display Dish information -------------------------------------------
 const displayDishInfo = mealName => {
-
     const mealDiv = document.getElementById('mealDetails');
     mealDiv.innerHTML = `
         <img src="${mealName.strMealThumb}">
