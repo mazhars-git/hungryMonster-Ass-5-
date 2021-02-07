@@ -1,0 +1,36 @@
+section{
+    background-color: #fa3ae0;
+}
+.container{
+    padding: 80px 0px;
+}
+.search-area{
+    width: 40%;
+    margin: auto;
+    padding-bottom: 40px;
+}
+.search-area input{
+    padding: 10px 100px;
+    border-radius: 3px;
+    border: none;
+}
+#meals{
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-gap: 40px;
+    align-items: center;
+    text-align: center;
+}
+.meal{
+    color: rgb(8, 24, 255);
+    background-color: rgba(0, 0, 0, 0.336);
+}
+.meal img{
+    width: 100%;
+    border-radius: 10px 10px 0 0;
+}
+.meal h3{
+    font-size: 25px;
+    text-align: center;
+    padding: 20px 0;
+}
