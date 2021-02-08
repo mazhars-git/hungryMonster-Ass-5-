@@ -1,23 +1,24 @@
 //even on search button--------------------------------------------------
 document.getElementById('search').addEventListener('click', function () {
     const searchInput = document.getElementById('typeInput').value;
-
     if (searchInput == "") {
-        alert('No meals found')
+        alert('Write valid input!!')
     } else {
         displayInputDish(searchInput);
     }
     document.getElementById('typeInput').value = "";
     document.getElementById('meals').innerHTML = "";
     document.getElementById('mealDetails').innerHTML = "";
-})
+    document.getElementById('errorMessage').innerHTML = "";
+});
 
 //function to display input dish --------------------------------------
 function displayInputDish(input) {
     fetch(`https://www.themealdb.com/api/json/v1/1/search.php?f=${input}`)
     fetch(`https://www.themealdb.com/api/json/v1/1/search.php?s=${input}`)
-    .then(res => res.json())
-    .then(data => displayDishes(data.meals));
+        .then(res => res.json())
+        .then(data => displayDishes(data.meals))
+        .catch(error => displayError('Not found, please try again later.'));
 }
 
 //display meals name ---------------------------------------------------
@@ -37,12 +38,18 @@ const displayDishes = mealsName => {
     });
 }
 
+//error message ---------------------
+const displayError = error => {
+    const errorMessage = document.getElementById('errorMessage');
+    errorMessage.innerText = error;
+}
+
 //display dish details ----------------------------------------------
 const displayDishDetails = mealName => {
     const url = `https://www.themealdb.com/api/json/v1/1/search.php?s=${mealName}`
     fetch(url)
-    .then(res => res.json())
-    .then(data => displayDishInfo(data.meals[0]))
+        .then(res => res.json())
+        .then(data => displayDishInfo(data.meals[0]))
 }
 
 //display Dish information -------------------------------------------

@@ -1,11 +1,20 @@
 section {
-    background-color: #fa9959;
+    background-color: #03a5e0da;
     min-height: 650px;
 }
 
 /**-----------------------------container ----------------------------*/
 .container {
     padding: 80px 0px;
+}
+
+#errorMessage {
+    color: rgb(255, 4, 4);
+    width: 50%;
+    margin: auto;
+    text-align: center;
+    font-size: 30px;
+    font-weight: 600;
 }
 
 /**-----------------------------search section ----------------------------*/
@@ -20,9 +29,11 @@ section {
     border-radius: 3px;
     border: none;
 }
-.search-area .style-btn{
-    background-color: rgb(38, 102, 221);
+
+.search-area .style-btn {
+    background-color: #ff5e57;
     color: #fff;
+    font-weight: 500;
     border: none;
 }
 
@@ -55,7 +66,7 @@ section {
     text-transform: capitalize;
     text-align: center;
     padding: 15px 0;
-    color: rgb(38, 102, 221);
+    color: #ff5e57;
 }
 
 /**-----------------------------meal Details ----------------------------*/
@@ -85,19 +96,22 @@ section {
 #mealDetails ul li {
     list-style: none;
     margin: 8px 18px;
-    color: rgb(38, 102, 221);
+    color: #ff5e57;
     font-weight: 600;
 }
+
 /*--------------footer----------------*/
-footer{
+footer {
     text-align: center;
     margin: 0;
     padding: 5px;
-    background-color: rgb(38, 102, 221);
+    background-color: #532219;
     color: #fff;
 }
-footer p{
+
+footer p {
     font-size: 15px;
     padding-top: 15px;
 }
+
 /*--------------end----------------*/
